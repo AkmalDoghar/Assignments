@@ -25,6 +25,16 @@ body{
     justify-content: center;
     display: flex;
 }
+.box{
+    display: flex;
+    
+}
+
+.userlogo{
+    display: flex;
+    height: 45px;
+    margin-right: 8px;
+}
 
 .name{
     display: flex;
@@ -40,6 +50,11 @@ body{
     
 }
 
+.passwordlogo{
+    height: 45px;
+    margin-top: 15px;
+    margin-right: 8px;
+}
 .password{
     margin-top: 20px;
     padding: 5px;
