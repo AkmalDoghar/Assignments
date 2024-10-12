@@ -1,0 +1,103 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-image:url(./background.jpg);
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.logo{
+    display: block;
+    background: transparent;
+    margin-left: 15%;
+    margin-top: 220px;
+   height: 220px;   
+   align-items: center;
+   justify-content: center;
+}
+.signin{
+    
+    justify-content: center;
+    display: flex;
+}
+
+.name{
+    display: flex;
+    padding: 5px;
+    border-radius: 20px;
+    border-color: fuchsia;
+    background-color: transparent;
+    
+    height: 25px;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.password{
+    margin-top: 20px;
+    padding: 5px;
+    background-color: transparent;
+    border-radius: 20px;
+    border-color: fuchsia;
+    display: flex;
+    height: 25px;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+}
+
+.attach {
+    display: inline;
+}
+
+.checkbox {
+    margin-top: 20px;
+    height: 17px;
+    width: 17px;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.Remember {
+    cursor: pointer;   
+    margin-left: 5px; /* Optional: Adds some space between the checkbox and text */
+}
+
+.forget{
+    display: inline;
+   margin-left: 70px;
+}
+
+.login{
+    display: inline;
+    padding: 10px 20px;
+    margin-top: 25px;
+    background: fuchsia;
+    border: 2px solid black;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+.Account{
+    display: inline;
+    margin-left: 60px;
+}
+.signup{
+    
+    margin-left: 210px;   
+}
