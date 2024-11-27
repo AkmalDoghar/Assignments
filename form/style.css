@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+     
+}
+body{
+    background-image: url("./4975d9b870d186097c0e8180b94a8a2a.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar{
+    display: flex;
+   
+    
+}
+.navbar h2{
+    margin-top: 20px;
+    margin-left: 10%;
+    font-size: 40px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+.navbar .link{
+    gap: 40px;
+    font-size: 20px;
+    display: flex;
+    color: white;
+    cursor: pointer;
+    margin-left: 45%;
+    margin-top: 25px;
+}
+
+.navbar .link button{
+    cursor: pointer;
+    height: 40px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    font-size: 17px;
+    border-radius: 8px;
+    width: 80px;
+    margin-top: -8px;
+    transition: all 0.2s ease;
+}
+.form{
+   border: 2px solid white;
+   border-radius: 10px;
+    width: 26%;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 37%;
+    margin-top: 5%;
+    backdrop-filter: blur(15px);
+    transition: all 0.3s ease;
+}
+.delete{
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    display: inline;
+    font-size: 25px;
+    margin-left: 93%;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.box{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+
+.form:hover {
+    background-color: transparent; /* Changes the background color */
+    color: white;/* Changes the text color */
+    transform: scale(1.03); /* Slightly enlarges the button */
+    border-color: white; /* Changes the border color */
+}
+
+.box h2{
+    color: white;
+    font-weight: bold;
+   font-size: 30px  ;
+    margin-top: 5%;
+}
+
+
+.input-box{
+    margin:  10% 15%;
+    
+}
+
+.input-box .email,.password{
+   border-bottom: 2px solid white;
+    margin-bottom: 10%;
+    margin-right: 10%;
+}
+.input-box .email:active{
+    border: none;
+}
+.input-box .email input{
+    width: 80%;
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 110%;
+}
+.input-box .email ::placeholder{
+    color: white;
+}
+.input-box .password input{
+    width: 80%;
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 110%;
+}
+.input-box .password ::placeholder{
+    color: white;
+}
+
+.input-box .email a{
+    color: white;
+    margin-left: 15px;
+    font-size: 120%;
+}
+.input-box .password a{
+    color: white;
+    margin-left: 15px;
+    font-size: 120%;
+}
+
+.remember{
+    display: flex;
+    margin-top: 15%;
+    margin-left: 10%;
+    
+}
+
+.remember a{
+    margin-left: 20px;
+    color: white;
+    font-size:100%;
+}
+
+.btn{
+    margin-left: 35%;
+    margin-top: 5%;
+    height: 50px;
+    width: 100px;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size:20px;
+    color: white;
+    transition: all 0.2s ease;
+}
+.btn:hover {
+    background-color: transparent; /* Changes the background color */
+    color: white;/* Changes the text color */
+    transform: scale(1.1); /* Slightly enlarges the button */
+    border-color: white; /* Changes the border color */
+}
+
+.account{
+    color:  white ;
+    margin: 6% 8%;
+    font-size: 16px;
+}
+
+.account a{
+    margin-left: 17%;
+    color: white;
+    font-size: 20px;
+}
