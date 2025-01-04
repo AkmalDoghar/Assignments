@@ -558,7 +558,7 @@ section{
 }
 
 .skill-bar .bar .html{
-    width: 72%;
+    width: 90%;
     animation: html 2s;
 }
 
@@ -874,7 +874,7 @@ footer a i{
         width: 0%;
     }
     100%{
-        width: 72%;
+        width: 90%;
     }
 }
 
