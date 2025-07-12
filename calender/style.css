@@ -1,0 +1,346 @@
+/* =============================================
+   🔄 Reset + Global Setup
+============================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =============================================
+   🌌 Base Body Styles + Background Image
+============================================= */
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: url('background.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  transition: background 0.5s ease;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* 🔲 Background overlay for better contrast */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+/* =============================================
+   📝 Heading
+============================================= */
+.heading {
+  position: absolute;
+  top: 20px;
+  margin-bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3.0rem;
+  color: #20bcc2;
+  text-shadow: 0 0 10px #00f7ff, 0 0 4px white;
+  font-weight: bold;
+}
+
+body.dark .heading {
+  color: #c729a5;
+  text-shadow: 0 0 10px #ff00c8, 0 0 4px white;
+}
+
+/* =============================================
+   📦 Main Calendar Container
+============================================= */
+.calendar-app {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 20px;
+  top: 50px;
+  width: 100%;
+  max-width: 450px;
+  color: white;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: fadeIn 0.6s ease;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+/* =============================================
+   🗓️ Calendar Header (Month/Year & Nav)
+============================================= */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.month-year {
+  font-size: 1.9rem;
+  font-weight: 600;
+  text-shadow: 0 0 10px #00f7ff, 0 0 4px white;
+  color: #00f7ff;
+}
+
+.nav-btn {
+  font-size: 1.4rem;
+  padding: 8px 14px;
+  background: transparent;
+  border: 2px solid #00f7ff;
+  color: #00f7ff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 6px #00f7ff88;
+}
+
+.nav-btn:hover {
+  background: #00f7ff;
+  color: black;
+  transform: scale(1.08);
+  box-shadow: 0 0 10px #00f7ff;
+}
+
+/* =============================================
+   📅 Month & Year Selector Boxes
+============================================= */
+.selector-box {
+  text-align: center;
+  padding: 18px 0;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  transition: all .25s ease;
+}
+
+.selector-box:hover {
+  background: rgba(0,247,255,0.25);
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #00f7ff88;
+}
+
+.current-select {
+  background: #00f7ff;
+  color: black;
+  font-weight: bold;
+  border: 2px solid white;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+body.dark .selector-box:hover {
+  background: rgba(255,0,200,0.2);
+  box-shadow: 0 0 12px #ff00c888;
+}
+
+body.dark .current-select {
+  color: white;
+  box-shadow: 0 0 20px #ff00c8;
+}
+
+/* =============================================
+   📊 Grid Layouts (Weekdays + Dates + Years)
+============================================= */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+/* Year-specific layout */
+.year-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  padding: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+
+.day-name {
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #00f7ff;
+  text-shadow: 0 0 5px #00f7ff;
+}
+
+
+/* =============================================
+   🔢 Date Cells
+============================================= */
+.dates div {
+  text-align: center;
+  padding: 14px 0;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffffdd;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: inset 0 0 0 transparent;
+}
+
+.dates div:hover {
+  background: rgba(0, 247, 255, 0.25);
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #00f7ff88;
+}
+
+/* =============================================
+   ✨ Today Highlight
+============================================= */
+.today {
+  background: #00f7ff;
+  color: black;
+  font-weight: bold;
+  border: 2px solid white;
+  box-shadow:
+    0 0 10px #00f7ff,
+    0 0 20px #00f7ff,
+    0 0 30px #00f7ff;
+  transform: scale(1.12);
+  z-index: 2;
+  position: relative;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+/* =============================================
+   🌙 Toggle Dark Mode Button
+============================================= */
+.toggle-btn {
+  margin-top: 10px;
+  background: #00f7ff;
+  border: none;
+  color: black;
+  font-size: 1rem;
+  padding: 12px;
+  border-radius: 14px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #00f7ffaa;
+}
+
+.toggle-btn:hover {
+  background: white;
+  box-shadow: 0 0 15px #ffffff;
+}
+
+/* =============================================
+   🎬 Animation (Fade + Pulse)
+============================================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%   { box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff; }
+  50%  { box-shadow: 0 0 25px #f356c4, 0 0 40px #f356c4; }
+  100% { box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff; }
+}
+
+@keyframes pulse-dark {
+  0%   { box-shadow: 0 0 10px #ff00c8, 0 0 20px #ff00c8; }
+  50%  { box-shadow: 0 0 25px #ff00c8, 0 0 40px #ff00c8; }
+  100% { box-shadow: 0 0 10px #ff00c8, 0 0 20px #ff00c8; }
+}
+
+/* =============================================
+   🌑 Dark Mode Overrides
+============================================= */
+body.dark {
+  background: url('background.jpg') no-repeat center center/cover;
+}
+
+body.dark::before {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+body.dark .calendar-app {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 30px rgba(255, 0, 200, 0.2);
+}
+
+body.dark .month-year,
+body.dark .day-name,
+body.dark .nav-btn {
+  color: #ff00c8;
+  text-shadow: 0 0 10px #ff00c8;
+  border-color: #ff00c8;
+}
+
+body.dark .nav-btn:hover {
+  background: #ff00c8;
+  color: white;
+  box-shadow: 0 0 10px #ff00c8;
+}
+
+body.dark .dates div:hover {
+  background: rgba(255, 0, 200, 0.2);
+  box-shadow: 0 0 12px #ff00c888;
+}
+
+body.dark .today {
+  color: white;
+  box-shadow: 0 0 20px #ff00c8;
+}
+
+body.dark .toggle-btn {
+  background: #ff00c8;
+  color: white;
+  box-shadow: 0 0 12px #ff00c8aa;
+}
+
+body.dark .toggle-btn:hover {
+  background: white;
+  color: #ff00c8;
+  box-shadow: 0 0 15px #ffffffaa;
+}
+
+.footer {
+  position: absolute;
+  margin-bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 98%;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: #00f7ff;
+  font-size: 1rem;
+}
+.footer a { 
+  color: #00f7ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.footer a:hover {
+  color: #00f7ff88;
+  text-decoration: underline;
+}
+body.dark .footer {
+  color: #ff00c8;
+}
+body.dark .footer a {
+  color: #ff00c8;
+}
+
