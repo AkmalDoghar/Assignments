@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Islamic Names App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <h1 class="heading">✨ Islamic Names</h1>
+
+    <div class="view-switch">
+      <button id="view-allah">🕋 Allah's Names</button>
+      <button id="view-prophet">🌹 Prophet Muhammad ﷺ</button>
+    </div>
+
+    <div class="name-box">
+      <h2 id="name-arabic">...</h2>
+      <p id="name-translit">...</p>
+      <p id="name-urdu">...</p>
+      <p id="counter">Name 1 of 99</p>
+    </div>
+
+    <div class="buttons">
+      <button id="prev-btn">⬅️ Previous</button>
+      <button  id="start-over">Restart</button>
+      <button id="next-btn">➡️ Next</button>
+      <button id="toggle-dark">🌙 Toggle Theme</button>
+    </div>
+  </div>
+
+  <script src="names-allah.js"></script>
+  <script src="names-prophet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
