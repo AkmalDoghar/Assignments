@@ -10,7 +10,8 @@ export default function Contact() {
       <section className="text-center py-5">
         <div className="container">
           <h1 className="contact display-4 fw-bold">Contact Us</h1>
-          <p className="lead mt-3">We'd love to hear from you. Send us a message below!</p>
+          <p className="lead mt-3">We&#39;d love to hear from you. Send us a message below!</p>
+
         </div>
       </section>
 
