@@ -1,20 +1,16 @@
+import { NextResponse } from 'next/server';
+
 export async function POST(req) {
   try {
     const { messages } = await req.json();
 
-    const headers = {
-      'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
-      'Content-Type': 'application/json',
-      'X-Title': 'My AI Chatbot'
-    };
-
-    if (process.env.SITE_URL && !process.env.SITE_URL.includes('localhost')) {
-      headers['Referer'] = process.env.SITE_URL; // Correct header name
-    }
-
     const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',
-      headers,
+      headers: {
+        'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
+        'Content-Type': 'application/json',
+        'X-Title': 'My AI Chatbot'
+      },
       body: JSON.stringify({
         model: 'openai/gpt-3.5-turbo',
         messages
@@ -23,13 +19,12 @@ export async function POST(req) {
 
     if (!response.ok) {
       const errorText = await response.text();
-      return new Response(JSON.stringify({ error: errorText }), { status: response.status });
+      return NextResponse.json({ error: 'API request failed', details: errorText }, { status: 500 });
     }
 
     const data = await response.json();
-    return new Response(JSON.stringify(data), { status: 200 });
-
+    return NextResponse.json(data);
   } catch (error) {
-    return new Response(JSON.stringify({ error: error.message }), { status: 500 });
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
