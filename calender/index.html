@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glow Calendar</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <h1 class="heading">Calender</h1>
+  <div class="calendar-app">
+    <div class="calendar-header">
+      <button id="prev" class="nav-btn">←</button>
+      <h1 id="month-year" class="month-year">July 2025</h1>
+      <button id="next" class="nav-btn">→</button>
+    </div>
+
+    <div class="calendar-grid">
+      <div class="day-name">Sun</div>
+      <div class="day-name">Mon</div>
+      <div class="day-name">Tue</div>
+      <div class="day-name">Wed</div>
+      <div class="day-name">Thu</div>
+      <div class="day-name">Fri</div>
+      <div class="day-name">Sat</div>
+    </div>
+
+    <div class="calendar-grid dates" id="calendar-dates">
+      <!-- JS generates -->
+    </div>
+
+    <!--  🔻 Only the button block changed  -->
+    <button id="toggle-dark" class="toggle-btn">🌙 Toggle Dark Mode</button>
+
+    <button id="show-months" class="toggle-btn">📆 Month</button>
+    <button id="show-years" class="toggle-btn">📆 Years</button>
+    <button id="back-to-days" class="toggle-btn" style="display:none">🔙 Back</button>
+
+  </div>
+  <div class="footer">
+    <p>Made with ❤️ by <a href="https://www.linkedin.com/in/muhammad-akmal-1549522ab/" target="_blank"> Muhammad Akmal</a></p>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
