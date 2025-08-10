@@ -1,5 +1,4 @@
 // app/api/chat/route.js
-
 export async function POST(req) {
   const { messages } = await req.json();
 
@@ -8,11 +7,11 @@ export async function POST(req) {
     headers: {
       'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
       'Content-Type': 'application/json',
-      'HTTP-Referer': 'http://localhost:3000', // 👈 Change this if deploying
+      'HTTP-Referer': process.env.SITE_URL || 'http://localhost:3000',
       'X-Title': 'My AI Chatbot'
     },
     body: JSON.stringify({
-      model: 'openai/gpt-3.5-turbo', // or try 'mistralai/mixtral-8x7b' or 'anthropic/claude-2'
+      model: 'openai/gpt-3.5-turbo',
       messages
     })
   });
