@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="login.css">
+    <title>Login page</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <span class="bg-animate"></span>
+        <span class="bg-animate2"></span>
+
+        <div class="form-box login">
+            <h2 class="animation" style="--i:0; --j:21;">Login</h2>
+            <form action="#" id="loginForm">
+                <div class="input-box animation" style="--i:1; --j:22;">
+                    <input type="text" id="loginUsername" required />
+                    <label>Username</label>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="input-box animation" style="--i:2; --j:23;">
+                    <input type="password" id="loginPassword" required />
+                    <label>password</label>
+                    <i class="fa-solid fa-lock"></i>
+                    <i class="fa-solid fa-eye" id="loginTogglePassword"
+                        style="cursor: pointer; margin-right: 20px;"></i>
+                </div>
+
+                <button type="submit" class="btn animation" style="--i:3; --j:24;">Login</button>
+
+
+                <div class="logreg-link animation" style="--i:4; --j:25;">
+                    <p>Don't have an account? <a href="#" class="register-link">Sign up</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="info-text login">
+            <h2 class="animation" style="--i:0; --j:20;">WelCome Back!</h2>
+            <p class="animation" style="--i:1; --j:21;">Login to your account to start shopping</p>
+        </div>
+
+        <div class="form-box register">
+            <h2 class="animation" style="--i:17; --j:0;">Sign Up</h2>
+            <form action="#" id="signupForm">
+                <div class="input-box animation" style="--i:18; --j:1;">
+                    <input type="text" id="signupUsername" required />
+                    <label>Username</label>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="input-box animation" style="--i:19; --j:2;">
+                    <input type="email" id="signupEmail" required />
+                    <label>Email</label>
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+
+                <div class="input-box animation" style="--i:20; --j:3;">
+                    <input type="password" id="signupPassword" required />
+                    <label>password</label>
+                    <i class="fa-solid fa-lock"></i>
+                    <i class="fa-solid fa-eye" id="signupTogglePassword"
+                        style="cursor: pointer; margin-right: 20px;"></i>
+                </div>
+
+                <button type="submit" class="btn animation" style="--i:21; --j:4;">Sign Up</button>
+
+
+                <div class="logreg-link animation" style="--i:22; --j:5;">
+                    <p>Already have an account &nbsp; <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="info-text register">
+            <h2 class="animation" style="--i:17; --j:0;">Welcome!</h2>
+            <p class="animation" style="--i:18; --j:1;">Create an account to start shopping</p>
+
+        </div>
+
+    </div>
+    <script>
+        const wrapper = document.querySelector('.wrapper');
+        const registerLink = document.querySelector('.register-link');
+        const loginLink = document.querySelector('.login-link');
+
+        registerLink.onclick = () => {
+            wrapper.classList.add('active');
+        }
+
+        loginLink.onclick = () => {
+            wrapper.classList.remove('active');
+        }
+
+
+        // ====== LOGIN Password toggle ======
+        const loginToggle = document.getElementById("loginTogglePassword");
+        const loginPassword = document.getElementById("loginPassword");
+
+        loginToggle.addEventListener("click", () => {
+            const type = loginPassword.type === "password" ? "text" : "password";
+            loginPassword.type = type;
+            loginToggle.classList.toggle("fa-eye");
+            loginToggle.classList.toggle("fa-eye-slash");
+        });
+
+        // ====== SIGNUP Password toggle ======
+        const signupToggle = document.getElementById("signupTogglePassword");
+        const signupPassword = document.getElementById("signupPassword");
+
+        signupToggle.addEventListener("click", () => {
+            const type = signupPassword.type === "password" ? "text" : "password";
+            signupPassword.type = type;
+            signupToggle.classList.toggle("fa-eye");
+            signupToggle.classList.toggle("fa-eye-slash");
+        });
+
+
+        document.getElementById("signupForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById("signupUsername").value.trim();
+            const email = document.getElementById("signupEmail").value.trim();
+            const password = document.getElementById("signupPassword").value;
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (username.length < 3) {
+                alert("❌ Username must be at least 3 characters");
+                return;
+            }
+
+            if (!emailRegex.test(email)) {
+                alert("❌ Invalid email format");
+                return;
+            }
+
+            if (password.length < 6) {
+                alert("❌ Password must be at least 6 characters");
+                return;
+            }
+
+            // ✅ Save user to localStorage
+            const userData = {
+                username,
+                email,
+                password,
+            };
+            localStorage.setItem("registeredUser", JSON.stringify(userData));
+
+            alert("✅ Account created successfully!");
+
+            // ✅ Show login form only
+            document.getElementById("signupForm").reset();
+            wrapper.classList.remove("active"); // Go to login page
+        });
+        document.getElementById("loginForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById("loginUsername").value.trim();
+            const password = document.getElementById("loginPassword").value;
+
+            // ✅ Validate login credentials
+            const registeredUser = JSON.parse(localStorage.getItem("registeredUser"));
+
+            if (!registeredUser || registeredUser.username !== username || registeredUser.password !== password) {
+                alert("❌ Invalid username or password");
+                return;
+            }
+
+            alert("✅ Login successful!");
+            setTimeout(() => {
+                window.location.href = "home.html"; // Replace with your actual home page
+            }, 1000);
+            // Change to your desired page
+        });
+    </script>
+</body>
+
+</html>

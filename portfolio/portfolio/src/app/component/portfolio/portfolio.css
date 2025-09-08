@@ -1,0 +1,213 @@
+/* Portfolio Section */
+.portfolio {
+  padding: 0 2rem;
+  padding-bottom: 4rem;
+  background: var(--bg-color);
+}
+
+/* Heading */
+.main-text {
+  width: 100%;
+  text-align: center;
+  color: var(--hover-color);
+}
+
+.main-text h2 {
+  font-weight: 700;
+  font-size: var(--norma-font);
+}
+
+.main-text span {
+  color: #fdfdfd;
+  font-size: 0.8rem;
+  font-weight: 200;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Filter Buttons */
+.fillter-buttons {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.fillter-buttons .button {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  margin: 0 0.7rem;
+  color: var(--text-color);
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.fillter-buttons .button:hover {
+  color: var(--hover-color);
+}
+
+/* Active Button */
+.fillter-buttons .button.active {
+  color: var(--hover-color);
+  
+}
+
+/* Portfolio Gallery Grid */
+.portfolio-gallery {
+  display: grid;
+  padding: 0 5rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+/* Fade + Slide animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Default hidden */
+.port-box {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Jab show karein to animation chale */
+.port-box.show {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Portfolio Card */
+.port-box {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #292e33;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid var(--hover-color);
+  box-shadow: var(--neon-box-shadow);
+  transition: transform 0.3s ease;
+}
+
+/* Show animation */
+.port-box.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.port-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.port-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+
+.port-box:hover .port-image img {
+  transform: scale(1.1);
+}
+
+/* Hover Content */
+.port-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), #12f7ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  transition: opacity 0.5s ease;
+  padding: 0 2rem;
+}
+
+.port-box:hover .port-content {
+  opacity: 1;
+}
+
+.port-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.port-content p {
+  font-size: 0.85rem;
+  margin: 5px 0 15px 0;
+  color: #fff;
+}
+
+/* External Link Icon */
+.port-content a {
+  background: #fff;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid var(--hover-color);
+  outline: 2px solid #fff;
+  transition: transform 0.3s ease;
+}
+
+.port-content a:hover {
+  transform: rotate(10deg) scale(1.1);
+}
+
+.port-content a svg {
+  font-size: 1.3rem;
+  color: var(--secon-bg-color);
+}
+
+/* ================== Responsive ================== */
+@media (max-width: 992px) {
+  .portfolio-gallery {
+    padding: 0 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-gallery {
+    padding: 0 1rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fillter-buttons .button {
+    font-size: 0.75rem;
+    margin: 0 0.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-gallery {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .port-image {
+    height: 180px;
+  }
+}

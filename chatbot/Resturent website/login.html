@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Grand Coffee</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+        body {
+           * Add your background image */
+            background-size: cover;
+            
+            background: rgb(212, 70, 212);
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+        }
+
+        .login-container {
+             /* Semi-transparent background */
+            padding: 30px;
+            border: 2px solid black;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            width: 400px;
+        }
+        .text-center{
+            font-size: 35px;
+            background: purple;
+            border: 2px solid black;
+            border-radius: 25px;
+            padding: 15px;
+            width: 130px;
+          margin-left: 40%;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+           
+            text-align: center;
+        }
+
+        .form-group label {
+            color: #141313;
+            font-size: 20px;
+            margin-left: 20%;
+        }
+        .form-group input{
+            border: 2px solid black;
+            width: 40%;
+            margin-left: 30%;
+        }
+        
+
+        .form-control {
+            border-radius: 25px;
+            padding: 10px;
+            border: 1px solid #fff;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        .form-control:focus {
+            background-color: rgba(32, 31, 31, 0.3);
+            border-color: black;
+            color: black;
+        }
+
+        .btn-primary {
+            background-color: #2e6292; /* Button color */
+            border: none;
+            border-radius: 25px;
+            width: 30%;
+            margin-top: 20px;
+            margin-left: 35%;
+        }
+
+        .btn-primary:hover {
+            background-color: #2327eb; /* Button hover color */
+        }
+
+        .footer-text {
+            text-align: center;
+            margin-top: 15px;
+            margin-left: 40%;
+            color: #776d6d;
+        }
+
+        .footer-text a {
+            color: #ffcc00;
+        }
+
+        .mt-3{
+            margin-left: 40%;
+            margin-top: 20px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+            <p class="mt-3">Don't have an account? <a href="signup.html">Sign up</a></p>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Hardcoded credentials for demonstration purposes
+            const validEmail = "user@example.com";
+            const validPassword = "password123";
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (email === 'akmal11@gmail.com' && password === 'akmal#2244') {
+                // Redirect to the main page
+                window.location.href = 'index.html';
+            } else {
+                alert('Invalid email or password. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  background: var(--secon-bg-color);
+  flex-wrap: wrap;
+}
+
+.about .img-about {
+  text-align: center;
+  position: relative;
+  flex: 1;
+}
+
+.about .img-about img {
+  max-width: 300px;
+  width: 70%;
+  height: 500px;
+}
+
+.about-content {
+  flex: 1;
+}
+
+.about-content span {
+  color: #fdfdfd;
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  font-weight: 200;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.about-content h2 {
+  color: var(--hover-color);
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.about-content h3 {
+  margin-bottom: 0.5rem;
+  color: #fdfdfd;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.about-content p {
+  color: #fdfdfd;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.info-about-1,
+.info-about2,
+.info-about3 {
+  background: var(--bg-color);
+  font-size: 0.75rem;
+  position: absolute;
+  padding: 10px;
+  width: 90px;
+  height: 90px;
+  border-radius: 69% 31% 66% 34% / 21% 30% 70% 79%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: var(--neon-box-shadow);
+  border: 1px solid var(--hover-color);
+  outline: 2px solid var(--bg-color);
+  z-index: 100;
+  animation: morph 6s linear infinite;
+}
+
+.info-about-1 {
+  left: 15%;
+  top: 30%;
+}
+
+.info-about2 {
+  right: 15%;
+  bottom: 25%;
+}
+
+.info-about3 {
+  left: 15%;
+  bottom: 5%;
+}
+
+.img-about span {
+  color: var(--hover-color);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.info-about-1 p {
+  color: #fdfdfd;
+}
+
+.info-about2 p {
+  color: #fdfdfd;
+}
+
+.info-about3 p {
+  color: #fdfdfd;
+}
+
+/* Buttons */
+.btn-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn-box .btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 45px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: var(--neon-box-shadow);
+  border-radius: 8px;
+  border: 2px solid var(--hover-color);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.4s;
+}
+
+/* Button 1 */
+.btn {
+  background: var(--hover-color);
+  color: var(--bg-color);
+}
+
+.btn:hover {
+  color: var(--hover-color);
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--bg-color);
+  z-index: -1;
+  transition: 0.4s;
+}
+
+.btn:hover::before {
+  width: 100%;
+}
+
+/* ========================= */
+/* RESPONSIVENESS */
+/* ========================= */
+
+/* Mobile (<=480px) */
+@media (max-width: 480px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 2.3rem;
+  }
+
+  .about .img-about img {
+    max-width: 300px;
+    max-height: 400px;
+  }
+
+  .info-about-1,
+  .info-about2,
+  .info-about3 {
+    width: 60px;
+    height: 60px;
+    font-size: 0.5rem;
+  }
+
+  .about-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .about-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .about-content p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablets (481px–768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+
+  .about .img-about img {
+    max-width: 420px;
+    max-height: 420px;
+  }
+
+  .info-about-1 {
+    top: 28%;
+    height: 70px;
+    width: 70px;
+    left: 10%;
+  }
+
+  .info-about2 {
+    height: 70px;
+    width: 70px;
+    right: 10%;
+    bottom: 30%;
+  }
+
+  .info-about3 {
+    height: 70px;
+    width: 70px;
+    bottom: 5%;
+    left: 10%;
+  }
+
+  .about-content h2 {
+    font-size: 2rem;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+  }
+}
+
+/* Laptop/Desktop (>=1024px) */
+@media (min-width: 1024px) {
+  .about {
+    flex-direction: row;
+    padding: 6rem 8%;
+    gap: 4rem;
+  }
+
+  .about .img-about img {
+    max-width: 300px;
+  }
+
+  .about-content h2 {
+    font-size: 2.5rem;
+  }
+
+  .about-content h3 {
+    font-size: 1.8rem;
+  }
+
+  .about-content p {
+    font-size: 1.1rem;
+  }
+}

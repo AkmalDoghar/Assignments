@@ -1,0 +1,139 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Amiri', serif;
+  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  transition: background 0.4s ease;
+}
+
+body.dark {
+  background: linear-gradient(120deg, #2c003e, #3a0a4a, #000000);
+}
+
+.heading {
+  font-size: 2.5rem;
+  color: #00f7ff;
+  text-shadow: 0 0 12px #00f7ff, 0 0 4px white;
+  margin-bottom: 20px;
+}
+
+.name-box {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 30px 20px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
+}
+
+#name-arabic {
+  font-size: 2.5rem;
+  color: #00f7ff;
+  text-shadow: 0 0 20px #00f7ff;
+  margin-bottom: 10px;
+}
+
+#name-translit {
+  font-size: 1.5rem;
+  color: #ffffcc;
+  margin-bottom: 8px;
+}
+
+#name-urdu {
+  font-size: 1.3rem;
+  color: #fff9f0;
+  margin-bottom: 12px;
+  direction: rtl;
+  font-family: 'Noto Nastaliq Urdu', serif;
+}
+
+#counter {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.buttons, .view-switch {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+.buttons {
+  flex-wrap: wrap;
+}
+.buttons button,
+.view-switch button {
+  background: #00f7ff;
+  color: black;
+  font-weight: bold;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  margin: 8px 5px;
+  box-shadow: 0 0 10px #00f7ff88;
+  transition: all 0.3s ease;
+}
+
+
+.buttons button:hover,
+.view-switch button:hover {
+  background: white;
+  color: #00f7ff;
+  box-shadow: 0 0 20px #ffffff;
+}
+
+body.dark .heading {
+  color: #ff00c8;
+  text-shadow: 0 0 10px #ff00c8, 0 0 4px white;
+}
+
+body.dark #name-arabic {
+  color: #ff00c8;
+  text-shadow: 0 0 20px #ff00c8;
+}
+
+body.dark .buttons button,
+body.dark .view-switch button {
+  background: #ff00c8;
+  color: white;
+  box-shadow: 0 0 10px #ff00c888;
+}
+
+body.dark .buttons button:hover,
+body.dark .view-switch button:hover {
+  background: white;
+  color: #ff00c8;
+  box-shadow: 0 0 15px #ffffffaa;
+}
+
+@media screen and (max-width: 500px) {
+  .heading {
+    font-size: 2rem;
+  }
+  #name-arabic {
+    font-size: 2rem;
+  }
+  #name-translit, #name-urdu {
+    font-size: 1.1rem;
+  }
+  .buttons button, .view-switch button {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+}

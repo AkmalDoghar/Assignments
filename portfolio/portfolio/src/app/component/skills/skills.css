@@ -1,0 +1,315 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.skills {
+  background: var(--secon-bg-color);
+  padding-bottom: 2rem;
+}
+/* Main Text (Heading Part) */
+.main-text {
+  width: 100%;
+  text-align: center;
+  padding: 2rem 0;
+  color: var(--hover-color);
+}
+
+.main-text h2 {
+  font-weight: 700;
+  margin-top: 1rem;
+  font-size: var(--norma-font);
+}
+
+.main-text span {
+  color: #fdfdfd;
+  font-size: 0.8rem;
+  font-weight: 200;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+
+.skill-main {
+  width: 100%;
+  display: flex;
+}
+.skill-left{
+    width: 100%;
+}
+
+.skill-bar {
+  margin-bottom: 2.3rem;
+}
+
+.skill-main h3 {
+  color: #fdfdfd;
+  margin-bottom: 2rem;
+  font-size: var(--norma-font);
+  text-align: center;
+}
+
+.skill-left .skill-bar .info {
+  display: flex;
+  color: #fdfdfd;
+  font-weight: bold;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+.skill-left .bar-box{
+    padding: 0 5rem;
+}
+.skill-left .skill-bar .bar {
+  width: 100%;
+  height: 10px;
+  background-color: var(--bg-color);
+  border-radius: 25px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.skill-bar .bar span {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  background: var(--hover-color);
+  border-radius: 25px;
+  box-shadow: var(--neon-box-shadow);
+}
+
+.skill-bar .bar .html {
+  width: 90%;
+  animation: html 2s;
+}
+
+.skill-bar .bar .css {
+  width: 84%;
+  animation: css 3s;
+}
+
+.skill-bar .bar .javascript {
+  width: 69%;
+  animation: javascript 4s;
+}
+
+.skill-bar .bar span {
+  width: 0; 
+  height: 100%;
+  position: absolute;
+  left: 0;
+  background: var(--hover-color);
+  border-radius: 25px;
+  box-shadow: var(--neon-box-shadow);
+  animation-fill-mode: forwards; 
+}
+
+.skill-bar .bar .html {
+  animation: htmlAnim 2s ease forwards;
+}
+
+.skill-bar .bar .css {
+  animation: cssAnim 2.5s ease forwards;
+}
+
+.skill-bar .bar .javascript {
+  animation: jsAnim 3s ease forwards;
+}
+
+.skill-bar .bar .reactjs {
+  animation: reactAnim 3.5s ease forwards;
+}
+
+/* Keyframes */
+@keyframes htmlAnim {
+  from { width: 0; }
+  to { width: 90%; }
+}
+
+@keyframes cssAnim {
+  from { width: 0; }
+  to { width: 84%; }
+}
+
+@keyframes jsAnim {
+  from { width: 0; }
+  to { width: 69%; }
+}
+
+@keyframes reactAnim {
+  from { width: 0; }
+  to { width: 64%; }
+}
+
+
+.skill-right{
+    width: 100%;
+}
+
+
+.professional {
+  display: grid;
+  margin-top: -25px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.box {
+  position: relative;
+  margin: 10px 0;
+  flex: 1 1 15rem;
+}
+
+.box .text {
+  align-items: center;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.box .text big {
+  font-weight: 400;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.box .text small {
+  display: block;
+  font-weight: 600;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.circle {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle .points {
+  width: 2px;
+  height: 10px;
+  background: var(--bg-color);
+  position: absolute;
+  border-radius: 3px;
+  transform: rotate(calc(var(--i) * var(--rot, 4deg))) translateY(-45px);
+}
+
+.points.marked {
+  animation: glow 0.04s linear forwards;
+  animation-delay: calc(var(--i) * 0.04s);
+}
+@keyframes glow {
+  0% {
+    background: var(--bg-color);
+    box-shadow: none;
+  }
+  100% {
+    background: var(--hover-color);
+    box-shadow: var(--neon-box-shadow);
+  }
+}
+
+
+/* =========================
+   Responsive Design
+========================= */
+
+/* Tablets and small laptops */
+@media (max-width: 992px) {
+  .skill-left .bar-box {
+    padding: 0 2rem;
+  }
+
+  .professional {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .circle {
+    height: 100px;
+  }
+
+  .box .text big {
+    font-size: 1rem;
+  }
+
+  .box .text small {
+    font-size: 0.8rem;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  .skill-main {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .skill-left .bar-box {
+    padding: 2rem 5rem;
+  }
+
+  .professional {
+    margin-top: 2rem;
+    grid-template-columns: 2fr 2fr; /* single column */
+    justify-items: left;
+  }
+
+  .circle {
+    height: 90px;
+  }
+
+  .box {
+    width: 100%;
+    text-align: center;
+  }
+
+  .box .text big {
+    font-size: 0.9rem;
+  }
+
+  .box .text small {
+    font-size: 0.75rem;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  .main-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .skill-left .bar-box {
+    padding: 0 3rem;
+  }
+
+  .skill-left .skill-bar .info p {
+    font-size: 0.8rem;
+  }
+
+  .skill-bar .bar {
+    height: 8px;
+  }
+
+  .circle {
+    margin-top: 2rem;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    height: 80px;
+  }
+
+  .box .text big {
+    font-size: 0.8rem;
+  }
+
+  .box .text small {
+    font-size: 0.7rem;
+  }
+}

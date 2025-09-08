@@ -1,0 +1,381 @@
+*{
+    margin-top: 0;
+    padding: 0;
+    margin-bottom: 20px;
+    background-color: lightgray;
+    
+}
+.navbar{
+    display: flex;
+}
+.logo{
+    display: flex;
+    height: 130px;
+    cursor: pointer;
+}
+.text{
+    margin-top: 50px;
+    cursor: pointer;
+}
+header {
+    margin-left: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Button styles */
+.buttons .btn {
+
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 50px;
+    
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn:hover{
+    background-color: rgb(113, 0, 128);
+    color: WHITE;
+    border-style: dotted;
+
+}
+
+/* Styling the search icon */
+.search-icon {
+    font-size: 30px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+
+.body{
+    margin-top: 80px;
+    margin-left: 110px;
+    height: 150px;               
+    line-height: 1.5;             
+    
+}
+.para{
+    margin-left: 60px;
+    margin-right: 60%;
+    line-height: 25px;
+    
+}
+.image{
+    height: 300px;
+    border-radius: 30px;     
+    margin-left: 48%;
+    transition: all 0.3s ease;
+    transform: translateY(1px);
+    margin-top: -280px;
+}
+.image:hover {
+    transform: translateY(-3px);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3), -5px -5px 20px rgba(255, 255, 255, 0.9); /* Enhance hover effect */
+  }
+
+.shop{
+    margin-top: 10px;
+    margin-right: -150px;
+    margin-left: 80px;
+    padding: 8px;
+    border-radius: 20px;
+    cursor: pointer;
+    height: 40px;
+    padding: 10px;
+}
+.shop:hover{
+    background-color: rgb(113, 0, 128);
+    color: WHITE;
+    border-style: dotted;
+}
+
+/* section 2 */
+
+.our{
+    margin-top: 80px;
+    margin-left: 40%;
+
+}
+.lorem{
+    margin-left: 25%;
+}
+/* .orange{
+    height: 120px;
+    width: 120px;
+    margin-top: 50px;
+    margin-left: 150px; 
+}
+.org{
+    margin-left: 170px;   
+    margin-top: 18px; 
+}
+.servis{
+    margin-left: 95px;
+    
+}
+
+.ser{
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+} */
+
+.servis-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;   
+}
+
+
+.shop-sec{
+    display: flex;
+    justify-content: space-between;
+    
+}
+  
+.box{
+    border: 2px ;
+    height: 200px;
+    width: 30%;
+    padding: 20px 0px 15px;
+    margin-top: 15px;
+  
+} 
+
+.box-img{
+    width:  300px;
+    height: 260px;
+    background-size: cover;
+    margin-top: 10px
+  
+}
+
+.box-content{
+    margin-left: 15px;
+    margin-right: 15px;
+   
+  
+}
+.box-content h2{
+    margin-left: 120px;   
+    margin-top: 50px; 
+}
+
+.read{
+    margin-top: 300px;
+    margin-right: 80px;
+    height: 55px;
+    width: 110px;
+    border: 2px solid;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;    
+}
+.read:hover{
+    background-color: rgb(113, 0, 128);
+    color: WHITE;
+    border-style: dotted;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.subheading {
+    font-size: 1.2em;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.fruit-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.fruit-info {
+    text-align: left;
+    max-width: 60%;
+}
+
+.fruit-info h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.fruit-info p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #333;
+}
+
+button {
+    
+    
+    padding: 10px 20px;
+    border: 2px solid;
+    cursor: pointer;
+    font-size: 1em;
+}
+.buynow{
+    border-radius: 30px;
+}
+.buynow:hover{
+    background-color: rgb(113, 0, 128);
+    color: WHITE;
+    border-style: dotted;
+}
+
+.fruit-image {
+    max-width: 30%;
+}
+
+.fruit-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+#contact-us {
+    padding: 60px 0;
+    background-color: lightgray;
+}
+
+.contact-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#contact-us h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+form input, form textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+form button {
+    
+    padding: 15px 30px;
+    border: 2px solid;
+    cursor: pointer;
+    border-radius: 25px;
+    height: 50px;
+    font-size: 1em;
+    transition:  0.3s ease;
+}
+
+form button:hover{
+    background-color: rgb(113, 0, 128);
+    color: WHITE;
+    border-style: dotted;
+}
+/* Footer */
+#footer {
+    background-color: lightgray;
+    padding: 50px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer-section {
+    flex-basis: 22%;
+    text-align: left;
+}
+
+.footer-section h4 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.footer-section p {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.follow-us {
+    text-align: left;
+}
+
+.social-icons img {
+    margin-right: 15px;
+    height: 45px;
+    width: 45px;
+    display: inline-flex;
+}
+
+
+
+.subscribe {
+    margin-top: 20px;
+}
+
+.subscribe input {
+    padding: 10px;
+    width: 70%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.subscribe button {
+    padding: 10px 20px;
+    border: 2px solid;
+    cursor: pointer;
+    border-radius: 24px;
+    margin-left: 10px;
+}
+.subscribe button:hover{
+    background-color: rgb(113, 0, 128);
+    color: WHITE;
+    border-style: dotted;
+}
+
+
+
+/* Footer Bottom */
+.footer-bottom {
+    background-color: lightgray;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 0.9em;
+    color: #777;
+}
+
